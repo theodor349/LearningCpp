@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+/CRYENGINE/Xcom/bin/win_x64
+/CRYENGINE/Xcom/Editor/ResourceCache
+/CRYENGINE/Xcom/logbackups
+/CRYENGINE/Xcom/user
+/CRYENGINE/Xcom/solutions/win64/CMakeFiles
+/CRYENGINE/Xcom/solutions/win64/.vs/xcom/v16
+/CRYENGINE/Xcom/solutions/win64/x64/Profile
+/CRYENGINE/Xcom/solutions/win64/xcom.dir/Profile
+/CRYENGINE/Xcom/solutions/win64/CRYENGINE

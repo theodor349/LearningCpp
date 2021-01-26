@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\Code\StdAfx.cpp" />
+    <ClCompile Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\solutions\win64\Code_uber.cpp">
+      <Filter>UBER FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\solutions\win64\Player_uber.cpp">
+      <Filter>UBER FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\solutions\win64\Status_uber.cpp">
+      <Filter>UBER FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\solutions\win64\SpawnPoint_uber.cpp">
+      <Filter>UBER FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\solutions\win64\Weapons_uber.cpp">
+      <Filter>UBER FILES</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\Code\GamePlugin.cpp" />
+    <ClInclude Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\Code\GamePlugin.h" />
+    <ClInclude Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\Code\StdAfx.h" />
+    <ClInclude Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\Code\Components\Player\Player.cpp">
+      <Filter>Components\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\Code\Components\Player\Player.h">
+      <Filter>Components\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\Code\Components\Player\Status\StatusComponent.cpp">
+      <Filter>Components\Player\Status</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\Code\Components\Player\Status\StatusComponent.h">
+      <Filter>Components\Player\Status</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\Code\Components\SpawnPoint\SpawnPoint.cpp">
+      <Filter>Components\SpawnPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\Code\Components\SpawnPoint\SpawnPoint.h">
+      <Filter>Components\SpawnPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\Code\Components\Weapons\WeaponBaseComponent.cpp">
+      <Filter>Components\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\Code\Components\Weapons\Bullet.h">
+      <Filter>Components\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\Code\Components\Weapons\WeaponBaseComponent.h">
+      <Filter>Components\Weapons</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\Code\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\Users\theod\Documents\GitHub\LearningCpp\CRYENGINE\Xcom\solutions\win64\xcom.autogen.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Components">
+      <UniqueIdentifier>{F0348E53-9848-3BC3-8D3B-ADFE1FE15A98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Player">
+      <UniqueIdentifier>{56EEF042-4AB3-3AC9-8BB1-9FA94F30EAE0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Player\Status">
+      <UniqueIdentifier>{225B5B5B-2540-39E9-9907-96DF23AB2A20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\SpawnPoint">
+      <UniqueIdentifier>{5E6B66B6-AB0C-396A-90B9-75C89FC5FEF2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Weapons">
+      <UniqueIdentifier>{98723739-37FD-3195-BEF5-4C46584B66EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{5D13E5E5-79FD-3C72-9938-54BC13A8EB33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UBER FILES">
+      <UniqueIdentifier>{0DB44E08-598F-3492-82AC-39C8EB7DFDE7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
