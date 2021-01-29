@@ -58,7 +58,20 @@ public:
 		if (event.event == ENTITY_EVENT_COLLISION)
 		{
 			// Collision info can be retrieved using the event pointer
-			//EventPhysCollision *physCollision = reinterpret_cast<EventPhysCollision *>(event.ptr);
+			EventPhysCollision *physCollision = reinterpret_cast<EventPhysCollision *>(event.nParam[0]);
+			if (physCollision) {
+				//IPhysicalEntity* pEntity1 = physCollision->pEntity[0];
+				IPhysicalEntity* pEntity2 = physCollision->pEntity[1];
+
+				auto pEntity = gEnv->pEntitySystem->GetEntityFromPhysics(pEntity2);
+				if (pEntity != nullptr) {
+					auto pStatus = pEntity->GetComponent<CStatusComponent>();
+					if (pStatus) {
+						CryLog("Found Status");
+						pStatus->SetDamage(25.0f);
+					}
+				}
+			}
 
 			// Queue removal of this entity, unless it has already been done
 			gEnv->pEntitySystem->RemoveEntity(GetEntityId());

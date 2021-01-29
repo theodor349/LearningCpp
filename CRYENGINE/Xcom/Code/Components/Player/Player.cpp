@@ -8,6 +8,8 @@
 #include <CryInput/IHardwareMouse.h>
 #include <CryNetwork/Rmi.h>
 
+#include <Components/Player/Status/StatusComponent.h>
+
 namespace
 {
 	static void RegisterPlayerComponent(Schematyc::IEnvRegistrar& registrar)
@@ -23,6 +25,12 @@ namespace
 
 void CPlayerComponent::Initialize()
 {
+	m_pStatusComponent = m_pEntity->GetOrCreateComponent<CStatusComponent>();
+	m_pStatusComponent->GetStatus().HealtMax = m_newHealth;
+	m_pStatusComponent->GetStatus().StaminaMax = m_newStamina;
+	m_pStatusComponent->GetStatus().HealtMed = m_newMedHealth;
+	m_pStatusComponent->GetStatus().StaminaMed = m_newMedStamina;
+
 	// The character controller is responsible for maintaining player physics
 	m_pCharacterController = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CCharacterControllerComponent>();
 	// Offset the default character controller up by one unit
@@ -78,7 +86,7 @@ void CPlayerComponent::InitializeLocalPlayer()
 
 	// Create the audio listener component.
 	m_pAudioListenerComponent = m_pEntity->GetOrCreateComponent<Cry::Audio::DefaultComponents::CListenerComponent>();
-	
+
 	// Get the input component, wraps access to action mapping so we can easily get callbacks when inputs are triggered
 	m_pInputComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CInputComponent>();
 	
@@ -130,6 +138,12 @@ void CPlayerComponent::InitializeLocalPlayer()
 	// Bind the shoot action to the space bar
 	m_pInputComponent->BindAction("player", "shoot", eAID_KeyboardMouse, EKeyId::eKI_Space);
 	
+	m_pInputComponent->RegisterAction("player", "test", [this](int activationMode, float value) 
+		{
+			m_pStatusComponent->SetHealth(0.0f);
+		});
+	m_pInputComponent->BindAction("player", "test", eAID_KeyboardMouse, EKeyId::eKI_F);
+
 	// Spawn the cursor
 	SpawnCursorEntity();
 }
@@ -149,9 +163,9 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 	case Cry::Entity::EEvent::Reset:
 	{
 		// Disable player when leaving game mode.
-		m_isAlive = event.nParam[0] != 0;
+		m_pStatusComponent->Alive(event.nParam[0] != 0);
 
-		if (m_isAlive)
+		if (m_pStatusComponent->IsAlive())
 		{
 			SpawnCursorEntity();
 		}
@@ -170,7 +184,7 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 	case Cry::Entity::EEvent::Update:
 	{
 		// Don't update the player if we haven't spawned yet
-		if(!m_isAlive)
+		if(!m_pStatusComponent->IsAlive())
 			return;
 		
 		const float frameTime = event.fParam[0];
@@ -306,7 +320,7 @@ void CPlayerComponent::OnReadyForGameplayOnServer()
 			return;
 
 		// Only send the Revive event to players that have already respawned on the server
-		if (!player.m_isAlive)
+		if (!m_pStatusComponent->IsAlive())
 			return;
 
 		// Revive this player on the new player's machine, on the location the existing player was currently at
@@ -325,7 +339,9 @@ bool CPlayerComponent::RemoteReviveOnClient(RemoteReviveParams&& params, INetCha
 
 void CPlayerComponent::Revive(const Matrix34& transform)
 {
-	m_isAlive = true;
+	m_pStatusComponent->SetHealth(100.0f);
+	m_pStatusComponent->SetStamina(100.0f);
+	m_pStatusComponent->Alive(true);
 	
 	// Set the entity transformation, except if we are in the editor
 	// In the editor case we always prefer to spawn where the viewport is

@@ -1,5 +1,5 @@
 <ObjectLayer>
- <Layer Name="Main" FullName="Main" GUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Hidden="0" Frozen="0" Expanded="0" Type="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" Color="4671303" Timestamp="1611687626">
+ <Layer Name="Main" FullName="Main" GUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Hidden="0" Frozen="0" Expanded="0" Type="0" Exportable="1" ExportLayerPak="1" DefaultLoaded="0" HavePhysics="1" IsDefaultColor="1" Color="4671303" Timestamp="1611687811">
   <LayerObjects>
    <Object Type="EntityWithComponent" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="a1898938-1168-0bf6-9491-ea83017df5fe" Name="RigidBodyEx1" Pos="66.5,56.5,32.5" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" Material="%engine%/EngineAssets/Materials/material_default" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Entity" HasEntity="1">
     <Properties />
@@ -57,39 +57,6 @@
      </Component>
     </Components>
    </Object>
-   <Object Type="EntityWithComponent" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="f79de250-479f-923a-8015-6ba321d1b114" Name="RigidBodyEx9" Pos="74,57,32.5" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" Material="%engine%/EngineAssets/Materials/material_default" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Entity" HasEntity="1">
-    <Properties />
-    <Components>
-     <Component CryXmlVersion="2" TypeGUID="6ddd0033-6aaa-4b71-b8ea-108258205e29" TypeName="Cry::DefaultComponents::CStaticMeshComponent" GUID="58527fb0-e141-7f14-417a-5c8b72cb78fa" Name="" UserAdded="true">
-      <Transform>
-       <translation>
-        <position>
-         <element element="0"/>
-         <element element="0"/>
-         <element element="0"/>
-        </position>
-       </translation>
-       <rotation x="0" y="-0" z="0"/>
-       <scale>
-        <element element="1"/>
-        <element element="1"/>
-        <element element="1"/>
-       </scale>
-      </Transform>
-      <properties Type="RenderAndCollider" FilePath="%engine%/EngineAssets/Objects/primitive_cube.cgf" Material="%engine%/EngineAssets/Materials/material_default.mtl">
-       <IEditorEntityComponent />
-       <Render ShadowSpec="Low" IgnoreVisArea="false" IgnoreTerrainLayerBlend="false" IgnoreDecalBlend="false" ViewDistRatio="100" LODDistance="100" GIMode="None"/>
-       <Physics WeightType="EWeightType::Mass" Density="0" Mass="20"/>
-      </properties>
-     </Component>
-     <Component CryXmlVersion="2" TypeGUID="912c6ce8-56f7-4ffa-9134-f98d4e307bd6" TypeName="Cry::DefaultComponents::CRigidBodyComponent" GUID="66201ee7-d54f-5c18-8c11-c52a7d4191a1" Name="" UserAdded="true">
-      <properties Networked="false" EnabledByDefault="true" Resting="false" Type="Rigid" SendCollisionSignal="false">
-       <Buoyancy Damping="1" Density="1" Resistance="1"/>
-       <Simulation MaxTimeStep="0.02" SleepSpeed="0.039999999" Damping="0"/>
-      </properties>
-     </Component>
-    </Components>
-   </Object>
    <Object Type="EntityWithComponent" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="6e74491e-44d4-2d24-3049-6d55dacf5a9e" Name="RigidBodyEx2" Pos="67.5,56.5,32.5" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" Material="%engine%/EngineAssets/Materials/material_default" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Entity" HasEntity="1">
     <Properties />
     <Components>
@@ -123,6 +90,39 @@
      </Component>
     </Components>
    </Object>
+   <Object Type="EntityWithComponent" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="f79de250-479f-923a-8015-6ba321d1b114" Name="RigidBodyEx9" Pos="74,57,32.5" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" Material="%engine%/EngineAssets/Materials/material_default" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Entity" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component CryXmlVersion="2" TypeGUID="6ddd0033-6aaa-4b71-b8ea-108258205e29" TypeName="Cry::DefaultComponents::CStaticMeshComponent" GUID="58527fb0-e141-7f14-417a-5c8b72cb78fa" Name="" UserAdded="true">
+      <Transform>
+       <translation>
+        <position>
+         <element element="0"/>
+         <element element="0"/>
+         <element element="0"/>
+        </position>
+       </translation>
+       <rotation x="0" y="-0" z="0"/>
+       <scale>
+        <element element="1"/>
+        <element element="1"/>
+        <element element="1"/>
+       </scale>
+      </Transform>
+      <properties Type="RenderAndCollider" FilePath="%engine%/EngineAssets/Objects/primitive_cube.cgf" Material="%engine%/EngineAssets/Materials/material_default.mtl">
+       <IEditorEntityComponent />
+       <Render ShadowSpec="Low" IgnoreVisArea="false" IgnoreTerrainLayerBlend="false" IgnoreDecalBlend="false" ViewDistRatio="100" LODDistance="100" GIMode="None"/>
+       <Physics WeightType="EWeightType::Mass" Density="0" Mass="20"/>
+      </properties>
+     </Component>
+     <Component CryXmlVersion="2" TypeGUID="912c6ce8-56f7-4ffa-9134-f98d4e307bd6" TypeName="Cry::DefaultComponents::CRigidBodyComponent" GUID="66201ee7-d54f-5c18-8c11-c52a7d4191a1" Name="" UserAdded="true">
+      <properties Networked="false" EnabledByDefault="true" Resting="false" Type="Rigid" SendCollisionSignal="false">
+       <Buoyancy Damping="1" Density="1" Resistance="1"/>
+       <Simulation MaxTimeStep="0.02" SleepSpeed="0.039999999" Damping="0"/>
+      </properties>
+     </Component>
+    </Components>
+   </Object>
    <Object Type="Designer" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="a06bf249-0bcf-40bf-9723-5020d2701400" Name="Designer Box4" Pos="70.572311,56.479603,32.016178" Rotate="1,0,0,0" Scale="7.8245997,1.3964999,1" ColorRGB="16777215" UseCustomLevelLayerColor="0" Material="%engine%/EngineAssets/Materials/material_default" MinSpec="0" RndFlags="1073741832" StaticObjFlags="0" ViewDistRatio="100">
     <Brush DesignerModeFlags="0" SubdivisionLevel="0" SubdivisionSmoothingGroup="0" MirrorPlaneNormal="0,0,0" MirrorPlaneDistance="0">
      <Polygon GUID="6bbd580a-ff8d-4264-a5a7-f0f94a0c7d84" BinaryData="BAAAAJWO0IQYcve/sObJqC2aH0AAAAAAAACwvJWO0IQYcve/sObJqC2aH0AAAAAAAAAQwJWO0IQYcve//v///yuaH8AAAAAAAAAQwJWO0IQYcve//v///yuaH8AAAAAAAACwvAQAAAAAAAAAAQAAAAEAAAACAAAAAgAAAAMAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAAAAAACVjtCEGHL3v23R/MAAAIAlbdH8wAAAgEBg0fxAAACAQGDR/EAAAIAl"/>
@@ -142,7 +142,7 @@
     <Components>
      <Component CryXmlVersion="2" TypeGUID="cf2612fe-5212-4675-a464-a538f92c260e" TypeName="CStatusComponent" GUID="c2738698-d0de-518e-500f-2dfcf530bfba" Name="" UserAdded="true">
       <properties>
-       <StatusParams HealthMax="398.00613" StaminaMax="3000"/>
+       <StatusParams HealthMax="1000" StaminaMax="3000"/>
       </properties>
      </Component>
     </Components>
@@ -250,17 +250,6 @@
      </Component>
     </Components>
    </Object>
-   <Object Type="NavigationArea" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="52fb8057-f6f8-efb0-5199-9efff14ab7c2" Name="NavigationArea1" Pos="58.987713,44.994926,30" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="9846784" UseCustomLevelLayerColor="0" MinSpec="0" Height="16" Exclusion="0" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
-    <AffectedAgentTypes MediumSizedCharacters="1" VehicleMedium="1"/>
-    <Properties />
-    <Points>
-     <Point Pos="0,0,0"/>
-     <Point Pos="0.010608673,23.00827,0"/>
-     <Point Pos="23.011875,23.005157,0"/>
-     <Point Pos="23.026005,0.0041122437,0"/>
-    </Points>
-    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Roof="0" Floor="0"/>
-   </Object>
    <Object Type="EntityWithComponent" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="e435cba0-23e3-3259-61f0-38bc5d0127d9" Name="RigidBodyEx6" Pos="68,56.5,33.5" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" Material="%engine%/EngineAssets/Materials/material_default" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Entity" HasEntity="1">
     <Properties />
     <Components>
@@ -293,6 +282,17 @@
       </properties>
      </Component>
     </Components>
+   </Object>
+   <Object Type="NavigationArea" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="52fb8057-f6f8-efb0-5199-9efff14ab7c2" Name="NavigationArea1" Pos="58.987713,44.994926,30" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="9846784" UseCustomLevelLayerColor="0" MinSpec="0" Height="16" Exclusion="0" RemoveInaccessibleTriangles="1" DisplayFilled="0" HasEntity="0">
+    <AffectedAgentTypes MediumSizedCharacters="1" VehicleMedium="1"/>
+    <Properties />
+    <Points>
+     <Point Pos="0,0,0"/>
+     <Point Pos="0.010608673,23.00827,0"/>
+     <Point Pos="23.011875,23.005157,0"/>
+     <Point Pos="23.026005,0.0041122437,0"/>
+    </Points>
+    <SoundData Side1="0" Side2="0" Side3="0" Side4="0" Roof="0" Floor="0"/>
    </Object>
    <Object Type="EntityWithComponent" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="a97adf4f-0b5f-99e3-1b4b-28e46ef54e84" Name="RigidBodyEx4" Pos="69.5,56.5,32.5" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" Material="%engine%/EngineAssets/Materials/material_default" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Entity" HasEntity="1">
     <Properties />
@@ -422,6 +422,74 @@
       <properties Networked="false" EnabledByDefault="true" Resting="false" Type="Rigid" SendCollisionSignal="false">
        <Buoyancy Damping="1" Density="1" Resistance="1"/>
        <Simulation MaxTimeStep="0.02" SleepSpeed="0.039999999" Damping="0"/>
+      </properties>
+     </Component>
+    </Components>
+   </Object>
+   <Object Type="EntityWithComponent" Layer="Main" LayerGUID="1dd3a559-e494-4742-a501-7dab4afbbf72" Id="34e8e4cb-41ca-d47f-d105-e23d029880be" Name="Entity-13" Pos="69.375511,54.110741,32.016178" Rotate="1,0,0,0" Scale="1,1,1" ColorRGB="65535" UseCustomLevelLayerColor="0" MinSpec="0" MatLayersMask="0" OutdoorOnly="0" CastShadow="1" CastShadowMinspec="1" DynamicDistanceShadows="0" GIMode="0" LodRatio="100" ViewDistRatio="100" HiddenInGame="0" RecvWind="0" RenderNearest="0" NoStaticDecals="0" EntityClass="Entity" HasEntity="1">
+    <Properties />
+    <Components>
+     <Component CryXmlVersion="2" TypeGUID="63f4c0c6-32af-4acb-8fb0-57d45dd14725" TypeName="CPlayerComponent" GUID="2785f180-a313-a1b2-183c-6e659a1823e6" Name="" UserAdded="true">
+      <properties />
+     </Component>
+     <Component CryXmlVersion="2" TypeGUID="98183f31-a685-43cd-92a9-815274f0a81c" TypeName="Cry::DefaultComponents::CCharacterControllerComponent" GUID="3b199c4c-63e4-5bbb-40b6-204b0fec2d8a" Name="" UserAdded="false">
+      <Transform>
+       <translation>
+        <position>
+         <element element="0"/>
+         <element element="0"/>
+         <element element="1"/>
+        </position>
+       </translation>
+       <rotation x="0" y="-0" z="0"/>
+       <scale>
+        <element element="1"/>
+        <element element="1"/>
+        <element element="1"/>
+       </scale>
+      </Transform>
+      <properties Networked="false">
+       <Physics Mass="80" Radius="0.44999999" Height="0.935" Capsule="true" GroundContactEps="0.0040000002" SendCollisionSignal="false"/>
+       <Movement AirControl="0" AirResistance="0.2" Inertia="8" InertiaAcc="8" MaxClimb="0.87266463" MaxJump="0.87266463" MinSlide="1.2217305" MinFall="1.3962634" MaxGroundVelocity="16"/>
+      </properties>
+     </Component>
+     <Component CryXmlVersion="2" TypeGUID="3cd5ddc5-ee15-437f-a997-79c2391537fe" TypeName="Cry::DefaultComponents::CAdvancedAnimationComponent" GUID="079006ea-9f7c-0de5-7627-aae3a6082224" Name="" UserAdded="false">
+      <Transform>
+       <translation>
+        <position>
+         <element element="0"/>
+         <element element="0"/>
+         <element element="0"/>
+        </position>
+       </translation>
+       <rotation x="0" y="-0" z="0"/>
+       <scale>
+        <element element="1"/>
+        <element element="1"/>
+        <element element="1"/>
+       </scale>
+      </Transform>
+      <properties Type="RenderAndCollider" Character="Objects/Characters/SampleCharacter/thirdperson.cdf" Material="" DatabasePath="Animations/Mannequin/ADB/FirstPerson.adb" ControllerDefPath="Animations/Mannequin/ADB/FirstPersonControllerDefinition.xml" DefaultScope="FirstPersonCharacter" DefaultFragment="Idle" AnimDriven="true" GroundAlign="false">
+       <IEditorEntityComponent />
+       <Render ShadowSpec="Low" IgnoreVisArea="false" IgnoreTerrainLayerBlend="false" IgnoreDecalBlend="false" ViewDistRatio="100" LODDistance="100" GIMode="None"/>
+       <Physics WeightType="EWeightType::Mass" Density="9.9999997e-05" Mass="10"/>
+      </properties>
+     </Component>
+     <Component CryXmlVersion="2" TypeGUID="1b988fa3-2cc8-4dfa-9107-a63aded77e91" TypeName="CEntityAINavigationComponent" GUID="b6641c53-ca78-8789-3935-097837c9c88e" Name="" UserAdded="false">
+      <properties agent="MediumSizedCharacters" updateTransf="false">
+       <IEntityNavigationComponent />
+       <movement normalSpeed="5" minSpeed="0" maxSpeed="5" maxAcceleration="7.5" maxDeceleration="6" lookAheadDistance="0.5" stopAtEnd="true"/>
+       <colavoid type="Active" radius="0.30000001" height="2"/>
+       <queryFilter AreasCount="1">
+        <AreaCost id="0" cost="1"/>
+        <IncludeFlags mask="4294967295"/>
+        <ExcludeFlags mask="0"/>
+       </queryFilter>
+      </properties>
+     </Component>
+     <Component CryXmlVersion="2" TypeGUID="cf2612fe-5212-4675-a464-a538f92c260e" TypeName="CStatusComponent" GUID="79176fe8-3ce8-457b-a017-2ff55c124492" Name="" UserAdded="true">
+      <properties>
+       <StatusParams HealthMax="200" StaminaMax="50"/>
       </properties>
      </Component>
     </Components>

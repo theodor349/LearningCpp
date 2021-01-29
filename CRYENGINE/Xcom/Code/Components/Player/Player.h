@@ -12,6 +12,8 @@
 #include <DefaultComponents/Audio/ListenerComponent.h>
 #include <CryAISystem/Components/IEntityNavigationComponent.h>
 
+#include <Components/Player/Status/StatusComponent.h>
+
 ////////////////////////////////////////////////////////
 // Represents a player participating in gameplay
 ////////////////////////////////////////////////////////
@@ -72,14 +74,18 @@ protected:
 	bool RemoteReviveOnClient(RemoteReviveParams&& params, INetChannel* pNetChannel);
 	
 protected:
-	bool m_isAlive = false;
-
 	Cry::DefaultComponents::CCameraComponent* m_pCameraComponent = nullptr;
 	Cry::DefaultComponents::CCharacterControllerComponent* m_pCharacterController = nullptr;
 	Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAnimationComponent = nullptr;
 	Cry::DefaultComponents::CInputComponent* m_pInputComponent = nullptr;
 	Cry::Audio::DefaultComponents::CListenerComponent* m_pAudioListenerComponent = nullptr;
 	IEntityNavigationComponent* m_pNavigationComponent = nullptr;
+
+	CStatusComponent* m_pStatusComponent = nullptr;
+	float m_newHealth = 100.0f;
+	float m_newStamina = 100.0f;
+	float m_newMedHealth = 50.0f;
+	float m_newMedStamina = 50.0f;
 
 	TagID m_walkTagId;
 
