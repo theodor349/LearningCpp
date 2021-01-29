@@ -3,15 +3,15 @@ Compile to Release x64
 C/C++
 	General 
 		Additional Include Directories = 
-			C:\Users\theod\Documents\Raylib\src;%(AdditionalIncludeDirectories)
+			C:\Users\theod\Documents\Raylib\src
 	Preprocessor 
 		Preprocessor Definitions = 
 			GRAPHICS_API_OPENGL_33 
 			PLATFORM_DESKTOP
 	Advanced
 		Compile As = 
-			Compile as C Code (/TC) 
-			
+			Compile as C++ Code (/TC) 
+
 Linker 
 	General 
 		Additional Library Directories =
