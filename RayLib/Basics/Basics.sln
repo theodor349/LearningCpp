@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CreateAProject", "CreateAProject\CreateAProject.vcxproj", "{74B21EBF-29DB-4124-94E3-EF4C7D877A05}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MoveingShapes", "MoveingShapes\MoveingShapes.vcxproj", "{3F725F91-E5E7-40CA-ACB7-1FCBDC354382}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{74B21EBF-29DB-4124-94E3-EF4C7D877A05}.Release|x64.Build.0 = Release|x64
 		{74B21EBF-29DB-4124-94E3-EF4C7D877A05}.Release|x86.ActiveCfg = Release|Win32
 		{74B21EBF-29DB-4124-94E3-EF4C7D877A05}.Release|x86.Build.0 = Release|Win32
+		{3F725F91-E5E7-40CA-ACB7-1FCBDC354382}.Debug|x64.ActiveCfg = Debug|x64
+		{3F725F91-E5E7-40CA-ACB7-1FCBDC354382}.Debug|x64.Build.0 = Debug|x64
+		{3F725F91-E5E7-40CA-ACB7-1FCBDC354382}.Debug|x86.ActiveCfg = Debug|Win32
+		{3F725F91-E5E7-40CA-ACB7-1FCBDC354382}.Debug|x86.Build.0 = Debug|Win32
+		{3F725F91-E5E7-40CA-ACB7-1FCBDC354382}.Release|x64.ActiveCfg = Release|x64
+		{3F725F91-E5E7-40CA-ACB7-1FCBDC354382}.Release|x64.Build.0 = Release|x64
+		{3F725F91-E5E7-40CA-ACB7-1FCBDC354382}.Release|x86.ActiveCfg = Release|Win32
+		{3F725F91-E5E7-40CA-ACB7-1FCBDC354382}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
