@@ -5,7 +5,7 @@ The RayLib.dll has to be put in the root folder where the main *.cpp file is loc
 
 - Basics
    - [x] Creating a Hello World Project
-   - [ ] Moving Cube
+   - [x] Moving Shapes
 - Small Projects
    - [ ] Snake
    - [ ] Chess
