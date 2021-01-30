@@ -11,6 +11,7 @@ public:
 
 	void AssignPeice(Piece* p) { m_piece = p; }
 	Piece* GetPeice() { return m_piece; }
+	Vector2 GetPos() { return m_pos; }
 
 protected:
 	Piece* m_piece;

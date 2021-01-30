@@ -2,7 +2,7 @@
 
 void Piece::Draw()
 {
-    DrawRectangle(m_pos.x * m_size, m_pos.y * m_size, m_size, m_size, GREEN);
+    DrawText(m_name.c_str(), m_pos.x * m_size, m_pos.y * m_size, 20, m_isWhiteTeam ? WHITE : RED);
 }
 
 Vector2* Piece::Movements()
@@ -16,3 +16,5 @@ int Piece::GetMovementsSize()
 {
     return 1;
 }
+
+

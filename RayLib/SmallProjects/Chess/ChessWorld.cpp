@@ -1,4 +1,5 @@
 #include "ChessWorld.h"
+#include "King.h"
 #include <string>
 
 void ChessWorld::Init(int screenWidth, int screenHeight)
@@ -10,19 +11,42 @@ void ChessWorld::Init(int screenWidth, int screenHeight)
 	// Spawn Tiles
 	SpawnTiles();
 	// Spawn Peices 
-	Piece* p = new Piece();
+	Piece* p = new King();
 	p->SetSize(m_size);
-	p->MoveTo({ 4,0 });
-	m_pieces[0] = *p;
+	MovePiece({ 4,0 }, p);
+	m_pieces[0] = p;
 }
 
 void ChessWorld::Update(float time)
 {
- 	if (IsKeyPressed(KEY_SPACE))
+	if (IsMouseButtonPressed(MouseButton::MOUSE_LEFT_BUTTON))
 	{
-		Piece* p = &m_pieces[0];
-		Vector2* moves = p->Movements();
-		p->MoveTo(moves[0]);
+		auto mousePos = GetMousePosition();
+		int x = mousePos.x / m_size;
+		int y = mousePos.y / m_size;
+		Tile tile = m_tiles[x * m_width + y];
+		if (m_selectedPiece != nullptr)
+		{
+			auto tilePos = tile.GetPos();
+			auto moves = m_selectedPiece->Movements();
+			int count = m_selectedPiece->GetMovementsSize();
+			for (size_t i = 0; i < count; i++)
+			{
+				Vector2 pos = moves[i];
+				if (pos.x == tilePos.x && pos.y == tilePos.y)
+				{
+					MovePiece(pos, m_selectedPiece);
+					m_selectedPiece = nullptr;
+				}
+			}
+		}
+		else
+		{
+			if (tile.GetPeice())
+			{
+				m_selectedPiece = tile.GetPeice();
+			}
+		}
 	}
 }
 
@@ -37,7 +61,11 @@ void ChessWorld::Draw()
 		}
 	}
 	// Pieces
-	m_pieces[0].Draw();
+	for (size_t i = 0; i < 32; i++)
+	{
+		if(m_pieces[i])
+			m_pieces[i]->Draw();
+	}
 }
 
 void ChessWorld::SpawnTiles()
@@ -56,4 +84,10 @@ void ChessWorld::SpawnTiles()
 				tile->SetColor(y % 2 != 0);
 		}
 	}
+}
+
+void ChessWorld::MovePiece(Vector2 pos, Piece* p)
+{
+	p->MoveTo(pos);
+	m_tiles[(int)(pos.x * m_width + pos.y)].AssignPeice(p);
 }
