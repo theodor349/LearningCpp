@@ -1,10 +1,10 @@
 #pragma once
 #include "Piece.h"
 
-class King : public Piece
+class Knight : public Piece
 {
 public:
-	King(bool isWhiteTeam) : Piece { "King" }{ m_isWhiteTeam = isWhiteTeam; }
+	Knight(bool isWhiteTeam) : Piece{ "Knight" } { m_isWhiteTeam = isWhiteTeam; }
 	Vector2* Movements() override;
 	int GetMovementsSize() override;
 };

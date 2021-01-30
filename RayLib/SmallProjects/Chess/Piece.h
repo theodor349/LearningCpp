@@ -13,12 +13,7 @@ public:
 	virtual Vector2* Movements();
 	virtual int GetMovementsSize();
 
-	void MoveTo(Vector2 pos) 
-	{ 
-		std::printf("New Pos: %.0f, %0.f\n", pos.x, pos.y); 
-		m_pos = pos; 
-		std::printf("New Pos: %.0f, %0.f\n", m_pos.x, m_pos.y); 
-	}
+	void MoveTo(Vector2 pos) { m_pos = pos; }
 	bool IsWhiteTeam() { return m_isWhiteTeam; }
 	void SetSize(int size) { m_size = size; }
 

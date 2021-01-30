@@ -9,10 +9,15 @@ public:
 	void Update(float time);
 	void Draw();
 
-	void SpawnTiles();
 
 protected:
+	void SpawnTiles();
+	void SpawnPieces();
+	void SpawnTeam(int* i, float backRow, float pawnRow, bool isWhite);
+	void SetupPiece(int* i, Piece* p, Vector2 pos);
+	
 	void MovePiece(Vector2 pos, Piece* p);
+	Tile* GetTileUnderMouse();
 
 	int m_width = 8;
 	int m_height = 8;

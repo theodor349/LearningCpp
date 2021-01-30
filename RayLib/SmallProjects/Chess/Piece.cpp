@@ -16,5 +16,3 @@ int Piece::GetMovementsSize()
 {
     return 1;
 }
-
-

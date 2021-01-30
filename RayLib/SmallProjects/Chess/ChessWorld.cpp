@@ -1,5 +1,10 @@
 #include "ChessWorld.h"
 #include "King.h"
+#include "Queen.h"
+#include "Bishop.h"
+#include "Rook.h"
+#include "Knight.h"
+#include "Pawn.h"
 #include <string>
 
 void ChessWorld::Init(int screenWidth, int screenHeight)
@@ -11,23 +16,17 @@ void ChessWorld::Init(int screenWidth, int screenHeight)
 	// Spawn Tiles
 	SpawnTiles();
 	// Spawn Peices 
-	Piece* p = new King();
-	p->SetSize(m_size);
-	MovePiece({ 4,0 }, p);
-	m_pieces[0] = p;
+	SpawnPieces();
 }
 
 void ChessWorld::Update(float time)
 {
 	if (IsMouseButtonPressed(MouseButton::MOUSE_LEFT_BUTTON))
 	{
-		auto mousePos = GetMousePosition();
-		int x = mousePos.x / m_size;
-		int y = mousePos.y / m_size;
-		Tile tile = m_tiles[x * m_width + y];
+		auto tile = GetTileUnderMouse();
 		if (m_selectedPiece != nullptr)
 		{
-			auto tilePos = tile.GetPos();
+			auto tilePos = tile->GetPos();
 			auto moves = m_selectedPiece->Movements();
 			int count = m_selectedPiece->GetMovementsSize();
 			for (size_t i = 0; i < count; i++)
@@ -42,9 +41,9 @@ void ChessWorld::Update(float time)
 		}
 		else
 		{
-			if (tile.GetPeice())
+			if (tile->GetPeice())
 			{
-				m_selectedPiece = tile.GetPeice();
+				m_selectedPiece = tile->GetPeice();
 			}
 		}
 	}
@@ -86,8 +85,67 @@ void ChessWorld::SpawnTiles()
 	}
 }
 
+void ChessWorld::SpawnPieces()
+{
+	int i = 0;
+	//// White
+	float pawnRow = (m_height - 2);
+	float backRow = (m_height - 1);
+	bool isWhite = true;
+	SpawnTeam(&i, backRow, pawnRow, isWhite);
+
+	//// Black
+	pawnRow = 1;
+	backRow = 0;
+	isWhite = false;
+	SpawnTeam(&i, backRow, pawnRow, isWhite);
+}
+
+void ChessWorld::SpawnTeam(int* i, float backRow, float pawnRow, bool isWhite)
+{
+	Piece* p = nullptr;
+	// Pawns
+	for (size_t x = 0; x < m_width; x++)
+	{
+		p = new Pawn(isWhite);
+		SetupPiece(i, p, { (float)x, pawnRow });
+	}
+	p = new King(isWhite);
+	SetupPiece(i, p, { 4,backRow });
+	p = new Queen(isWhite);
+	SetupPiece(i, p, { 3,backRow });
+	p = new Rook(isWhite);
+	SetupPiece(i, p, { 0,backRow });
+	p = new Rook(isWhite);
+	SetupPiece(i, p, { 7,backRow });
+	p = new Knight(isWhite);
+	SetupPiece(i, p, { 1,backRow });
+	p = new Knight(isWhite);
+	SetupPiece(i, p, { 6,backRow });
+	p = new Bishop(isWhite);
+	SetupPiece(i, p, { 2,backRow });
+	p = new Bishop(isWhite);
+	SetupPiece(i, p, { 5,backRow });
+}
+
+void ChessWorld::SetupPiece(int* i, Piece* p, Vector2 pos)
+{
+	p->SetSize(m_size);
+	MovePiece(pos, p);
+	m_pieces[*i] = p;
+	*i += 1;
+}
+
 void ChessWorld::MovePiece(Vector2 pos, Piece* p)
 {
 	p->MoveTo(pos);
 	m_tiles[(int)(pos.x * m_width + pos.y)].AssignPeice(p);
+}
+
+Tile* ChessWorld::GetTileUnderMouse()
+{
+	auto mousePos = GetMousePosition();
+	int x = mousePos.x / m_size;
+	int y = mousePos.y / m_size;
+	return &m_tiles[x * m_width + y];
 }
