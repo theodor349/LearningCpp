@@ -10,11 +10,20 @@ void ChessWorld::Init(int screenWidth, int screenHeight)
 	// Spawn Tiles
 	SpawnTiles();
 	// Spawn Peices 
+	Piece* p = new Piece();
+	p->SetSize(m_size);
+	p->MoveTo({ 4,0 });
+	m_pieces[0] = *p;
 }
 
 void ChessWorld::Update(float time)
 {
-
+ 	if (IsKeyPressed(KEY_SPACE))
+	{
+		Piece* p = &m_pieces[0];
+		Vector2* moves = p->Movements();
+		p->MoveTo(moves[0]);
+	}
 }
 
 void ChessWorld::Draw()
@@ -28,6 +37,7 @@ void ChessWorld::Draw()
 		}
 	}
 	// Pieces
+	m_pieces[0].Draw();
 }
 
 void ChessWorld::SpawnTiles()

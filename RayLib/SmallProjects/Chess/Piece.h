@@ -4,15 +4,18 @@
 class Piece
 {
 public:
-  	Vector2* Movements(Vector2 pos);
-	int GetMovementsSize();
+	void Draw();
 
-	Vector2* Attacks(Vector2 pos);
-	int GetAttacksSize();
+	Vector2* Movements();
+	int GetMovementsSize();
+	void MoveTo(Vector2 pos) { m_pos = pos; }
 
 	bool IsWhiteTeam() { return m_isWhiteTeam; }
+	void SetSize(int size) { m_size = size; }
 
 protected:
+	Vector2 m_pos;
+	int m_size;
 	bool m_isWhiteTeam = false;
 };
 

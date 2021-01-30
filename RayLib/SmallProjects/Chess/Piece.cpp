@@ -1,21 +1,18 @@
 #include "Piece.h"
 
-Vector2* Piece::Movements(Vector2 pos)
+void Piece::Draw()
 {
-    return nullptr;
+    DrawRectangle(m_pos.x * m_size, m_pos.y * m_size, m_size, m_size, GREEN);
+}
+
+Vector2* Piece::Movements()
+{
+    Vector2* res = new Vector2[1];
+    res[0] = { m_pos.x, m_pos.y + 1 };
+    return res;
 }
 
 int Piece::GetMovementsSize()
 {
-    return 0;
-}
-
-Vector2* Piece::Attacks(Vector2 pos)
-{
-    return nullptr;
-}
-
-int Piece::GetAttacksSize()
-{
-    return 0;
+    return 1;
 }

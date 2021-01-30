@@ -9,7 +9,7 @@ public:
 	void SetColor(bool isDark) { m_isDark = isDark; };
 	void SetSize(int size) { m_size = size; }
 
-	void AssignPeice(Piece* p);
+	void AssignPeice(Piece* p) { m_piece = p; }
 	Piece* GetPeice() { return m_piece; }
 
 protected:

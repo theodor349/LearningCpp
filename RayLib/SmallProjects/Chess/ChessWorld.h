@@ -17,5 +17,6 @@ protected:
 	int m_size;
 
 	Tile m_tiles[64];
+	Piece m_pieces[32];
 };
 

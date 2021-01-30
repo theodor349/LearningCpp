@@ -7,7 +7,7 @@ int main(void)
     // Initialization
     //--------------------------------------------------------------------------------------
     const int screenWidth = 800;
-    const int screenHeight = 460;
+    const int screenHeight = 800;
     const int squareSize = 20;
 
     InitWindow(screenWidth, screenHeight, "Chess - By Theodor Risager");
