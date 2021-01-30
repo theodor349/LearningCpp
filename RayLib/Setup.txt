@@ -1,6 +1,4 @@
-////
-	Compile to Release x64
-////
+Compile to Release x64
 
 C/C++
 	General 
