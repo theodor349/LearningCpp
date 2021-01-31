@@ -16,7 +16,7 @@ protected:
 	void SpawnTeam(int* i, float backRow, float pawnRow, bool isWhite);
 	void SetupPiece(int* i, Piece* p, Vector2 pos);
 	
-	void MovePiece(Vector2 pos, Piece* p);
+	void MovePiece(Vector2 pos, Piece** p);
 	Tile* GetTileUnderMouse();
 
 	int m_width = 8;
@@ -25,6 +25,6 @@ protected:
 
 	Tile m_tiles[64];
 	Piece* m_pieces[32];
-	Piece* m_selectedPiece = nullptr;
+	Piece** m_selectedPiece = nullptr;
 };
 

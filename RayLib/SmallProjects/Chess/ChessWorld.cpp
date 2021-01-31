@@ -27,8 +27,8 @@ void ChessWorld::Update(float time)
 		if (m_selectedPiece != nullptr)
 		{
 			auto tilePos = tile->GetPos();
-			auto moves = m_selectedPiece->Movements();
-			int count = m_selectedPiece->GetMovementsSize();
+			auto moves = (*m_selectedPiece)->Movements();
+			int count = (*m_selectedPiece)->GetMovementsSize();
 			for (size_t i = 0; i < count; i++)
 			{
 				Vector2 pos = moves[i];
@@ -131,15 +131,16 @@ void ChessWorld::SpawnTeam(int* i, float backRow, float pawnRow, bool isWhite)
 void ChessWorld::SetupPiece(int* i, Piece* p, Vector2 pos)
 {
 	p->SetSize(m_size);
-	MovePiece(pos, p);
 	m_pieces[*i] = p;
+	MovePiece(pos, &m_pieces[*i]);
 	*i += 1;
 }
 
-void ChessWorld::MovePiece(Vector2 pos, Piece* p)
+void ChessWorld::MovePiece(Vector2 pos, Piece** p)
 {
-	p->MoveTo(pos);
-	m_tiles[(int)(pos.x * m_width + pos.y)].AssignPeice(p);
+	auto t = &m_tiles[(int)(pos.x * m_width + pos.y)];
+	(*p)->MoveTo(pos);
+	t->AssignPeice(p);
 }
 
 Tile* ChessWorld::GetTileUnderMouse()

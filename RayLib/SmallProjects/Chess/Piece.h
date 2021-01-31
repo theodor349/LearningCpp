@@ -19,6 +19,7 @@ public:
 
 protected:
 	std::string m_name;
+
 	Vector2 m_pos = { 0,0 };
 	int m_size = 20;
 	bool m_isWhiteTeam = false;

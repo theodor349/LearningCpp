@@ -7,6 +7,5 @@ Vector2* Queen::Movements()
 
 int Queen::GetMovementsSize()
 {
-
     return 0;
 }

@@ -9,12 +9,12 @@ public:
 	void SetColor(bool isDark) { m_isDark = isDark; };
 	void SetSize(int size) { m_size = size; }
 
-	void AssignPeice(Piece* p) { m_piece = p; }
-	Piece* GetPeice() { return m_piece; }
+	void AssignPeice(Piece** p);
+	Piece** GetPeice() { return m_piece; }
 	Vector2 GetPos() { return m_pos; }
 
 protected:
-	Piece* m_piece;
+	Piece** m_piece;
 	bool m_isDark;
 	int m_size;
 	Vector2 m_pos;
