@@ -10,6 +10,7 @@ public:
 	void SetSize(int size) { m_size = size; }
 
 	void AssignPeice(Piece** p);
+	void RemovePiece() { m_piece = NULL; }
 	Piece** GetPeice() { return m_piece; }
 	Vector2 GetPos() { return m_pos; }
 

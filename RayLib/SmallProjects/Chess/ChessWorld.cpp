@@ -26,16 +26,20 @@ void ChessWorld::Update(float time)
 		auto tile = GetTileUnderMouse();
 		if (m_selectedPiece != nullptr)
 		{
-			auto tilePos = tile->GetPos();
-			auto moves = (*m_selectedPiece)->Movements();
-			int count = (*m_selectedPiece)->GetMovementsSize();
-			for (size_t i = 0; i < count; i++)
+			if (!tile->GetPeice() || !((*tile->GetPeice())->IsWhiteTeam() == (*m_selectedPiece)->IsWhiteTeam()))
 			{
-				Vector2 pos = moves[i];
-				if (pos.x == tilePos.x && pos.y == tilePos.y)
+				auto tilePos = tile->GetPos();
+				auto moves = (*m_selectedPiece)->Movements();
+				int count = (*m_selectedPiece)->GetMovementsSize();
+				for (size_t i = 0; i < count; i++)
 				{
-					MovePiece(pos, m_selectedPiece);
-					m_selectedPiece = nullptr;
+					Vector2 pos = moves[i];
+					if (pos.x == tilePos.x && pos.y == tilePos.y)
+					{
+						MovePiece(pos, m_selectedPiece);
+						m_selectedPiece = nullptr;
+						break;
+					}
 				}
 			}
 		}
@@ -46,6 +50,10 @@ void ChessWorld::Update(float time)
 				m_selectedPiece = tile->GetPeice();
 			}
 		}
+	}
+	else if (IsMouseButtonPressed(MouseButton::MOUSE_RIGHT_BUTTON))
+	{
+		m_selectedPiece = nullptr;
 	}
 }
 
@@ -65,6 +73,24 @@ void ChessWorld::Draw()
 		if(m_pieces[i])
 			m_pieces[i]->Draw();
 	}
+
+	if (m_selectedPiece)
+	{
+		auto move = (*m_selectedPiece)->Movements();
+		int count = (*m_selectedPiece)->GetMovementsSize();
+		for (size_t i = 0; i < count; i++)
+		{
+			if(!GetTileAt(move[i])->GetPeice() || (*GetTileAt(move[i])->GetPeice())->IsWhiteTeam() != (*m_selectedPiece)->IsWhiteTeam())
+				DrawHightLight(move[i], BLUE);
+		}
+	}
+}
+
+void ChessWorld::DrawHightLight(Vector2 pos, Color c) 
+{
+	int size = m_size / 3;
+	int offset = (m_size - size) / 2;
+	DrawRectangle(pos.x * m_size + offset, pos.y * m_size + offset, size, size, c);
 }
 
 void ChessWorld::SpawnTiles()
@@ -138,6 +164,9 @@ void ChessWorld::SetupPiece(int* i, Piece* p, Vector2 pos)
 
 void ChessWorld::MovePiece(Vector2 pos, Piece** p)
 {
+	auto oldTile = &m_tiles[(int)((*p)->GetPos().x * m_width + (*p)->GetPos().y)];
+	oldTile->RemovePiece();
+
 	auto t = &m_tiles[(int)(pos.x * m_width + pos.y)];
 	(*p)->MoveTo(pos);
 	t->AssignPeice(p);

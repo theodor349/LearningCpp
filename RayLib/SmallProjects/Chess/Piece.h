@@ -13,6 +13,7 @@ public:
 	virtual Vector2* Movements();
 	virtual int GetMovementsSize();
 
+	Vector2 GetPos() { return m_pos; }
 	void MoveTo(Vector2 pos) { m_pos = pos; }
 	bool IsWhiteTeam() { return m_isWhiteTeam; }
 	void SetSize(int size) { m_size = size; }

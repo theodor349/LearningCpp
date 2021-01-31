@@ -9,13 +9,15 @@ public:
 	void Update(float time);
 	void Draw();
 
+	Tile* GetTileAt(Vector2 pos) { return &m_tiles[(int)(pos.x * m_width + pos.y)]; }
 
 protected:
 	void SpawnTiles();
 	void SpawnPieces();
 	void SpawnTeam(int* i, float backRow, float pawnRow, bool isWhite);
 	void SetupPiece(int* i, Piece* p, Vector2 pos);
-	
+	void DrawHightLight(Vector2 pos, Color c);
+
 	void MovePiece(Vector2 pos, Piece** p);
 	Tile* GetTileUnderMouse();
 
