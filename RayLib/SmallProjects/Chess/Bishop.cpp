@@ -1,11 +1,5 @@
 #include "Bishop.h"
 
-Vector2* Bishop::Movements()
+void Bishop::CalculateMoves(Tile* tiles)
 {
-    return nullptr;
-}
-
-int Bishop::GetMovementsSize()
-{
-    return 0;
 }

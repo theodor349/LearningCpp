@@ -15,4 +15,3 @@ void Tile::AssignPeice(Piece** p)
 	}
 	m_piece = p;
 }
-

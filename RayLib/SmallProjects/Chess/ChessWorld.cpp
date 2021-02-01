@@ -29,8 +29,8 @@ void ChessWorld::Update(float time)
 			if (!tile->GetPeice() || !((*tile->GetPeice())->IsWhiteTeam() == (*m_selectedPiece)->IsWhiteTeam()))
 			{
 				auto tilePos = tile->GetPos();
-				auto moves = (*m_selectedPiece)->Movements();
-				int count = (*m_selectedPiece)->GetMovementsSize();
+				auto moves = (*m_selectedPiece)->Moves();
+				int count = (*m_selectedPiece)->MoveCount();
 				for (size_t i = 0; i < count; i++)
 				{
 					Vector2 pos = moves[i];
@@ -48,6 +48,7 @@ void ChessWorld::Update(float time)
 			if (tile->GetPeice())
 			{
 				m_selectedPiece = tile->GetPeice();
+				(*m_selectedPiece)->CalculateMoves(m_tiles);
 			}
 		}
 	}
@@ -76,11 +77,13 @@ void ChessWorld::Draw()
 
 	if (m_selectedPiece)
 	{
-		auto move = (*m_selectedPiece)->Movements();
-		int count = (*m_selectedPiece)->GetMovementsSize();
+		auto move = (*m_selectedPiece)->Moves();
+		int count = (*m_selectedPiece)->MoveCount();
 		for (size_t i = 0; i < count; i++)
 		{
-			if(!GetTileAt(move[i])->GetPeice() || (*GetTileAt(move[i])->GetPeice())->IsWhiteTeam() != (*m_selectedPiece)->IsWhiteTeam())
+			if (GetTileAt(move[i])->GetPeice())
+				DrawHightLight(move[i], RED);
+			else
 				DrawHightLight(move[i], BLUE);
 		}
 	}

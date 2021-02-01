@@ -1,11 +1,5 @@
 #include "Rook.h"
 
-Vector2* Rook::Movements()
+void Rook::CalculateMoves(Tile* tiles)
 {
-    return nullptr;
-}
-
-int Rook::GetMovementsSize()
-{
-    return 0;
 }

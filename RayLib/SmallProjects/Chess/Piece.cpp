@@ -5,14 +5,12 @@ void Piece::Draw()
     DrawText(m_name.c_str(), m_pos.x * m_size, m_pos.y * m_size, 20, m_isWhiteTeam ? WHITE : RED);
 }
 
-Vector2* Piece::Movements()
+void Piece::CalculateMoves(Tile* tiles)
 {
-    Vector2* res = new Vector2[1];
-    res[0] = { m_pos.x, m_pos.y + 1 };
-    return res;
 }
 
-int Piece::GetMovementsSize()
+void Piece::AddMove(Vector2 pos)
 {
-    return 1;
+    m_moves[m_moveCount] = pos;
+    m_moveCount++;
 }

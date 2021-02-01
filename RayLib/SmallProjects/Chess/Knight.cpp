@@ -1,11 +1,5 @@
 #include "Knight.h"
 
-Vector2* Knight::Movements()
+void Knight::CalculateMoves(Tile* tiles)
 {
-    return nullptr;
-}
-
-int Knight::GetMovementsSize()
-{
-    return 0;
 }

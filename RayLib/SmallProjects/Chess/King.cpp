@@ -1,21 +1,27 @@
 #include "King.h"
+#include "Tile.h"
 
-
-Vector2* King::Movements()
+void King::CalculateMoves(Tile tiles[64])
 {
-    Vector2* moves = new Vector2[8];
-    moves[0] = { m_pos.x + 0, m_pos.y + 1 };
-    moves[1] = { m_pos.x + 1, m_pos.y + 1 };
-    moves[2] = { m_pos.x - 1, m_pos.y + 1 };
-    moves[3] = { m_pos.x + 0, m_pos.y - 1 };
-    moves[4] = { m_pos.x + 1, m_pos.y - 1 };
-    moves[5] = { m_pos.x - 1, m_pos.y - 1 };
-    moves[6] = { m_pos.x + 1, m_pos.y + 0 };
-    moves[7] = { m_pos.x - 1, m_pos.y + 0 };
-    return moves;
+    delete[8] m_moves;
+    m_moves = new Vector2[8];
+    AddValidMove(tiles, { m_pos.x + 0, m_pos.y + 1 });
+    AddValidMove(tiles, { m_pos.x + 1, m_pos.y + 1 });
+    AddValidMove(tiles, { m_pos.x - 1, m_pos.y + 1 });
+    AddValidMove(tiles, { m_pos.x + 0, m_pos.y - 1 });
+    AddValidMove(tiles, { m_pos.x + 1, m_pos.y - 1 });
+    AddValidMove(tiles, { m_pos.x - 1, m_pos.y - 1 });
+    AddValidMove(tiles, { m_pos.x + 1, m_pos.y + 0 });
+    AddValidMove(tiles, { m_pos.x - 1, m_pos.y + 0 });
 }
 
-int King::GetMovementsSize()
+void King::AddValidMove(Tile* tiles, Vector2 pos)
 {
-    return 8;
+    int t = pos.x * 8 + pos.y;
+    if (t < 64)
+    {
+        Piece** p = tiles[t].GetPeice();
+        if (!p || (*p)->IsWhiteTeam() != m_isWhiteTeam)
+            AddMove(pos);
+    }
 }
