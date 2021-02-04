@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #include "Piece.h"
 
 class Tile

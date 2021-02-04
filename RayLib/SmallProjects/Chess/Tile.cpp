@@ -1,5 +1,4 @@
 #include "Tile.h"
-#include <string>
 
 void Tile::Draw()
 {

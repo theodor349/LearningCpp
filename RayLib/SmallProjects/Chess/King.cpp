@@ -1,7 +1,6 @@
 #include "King.h"
-#include "Tile.h"
 
-void King::CalculateMoves(Tile tiles[64])
+void King::CalculateMoves(Tile* tiles)
 {
     delete[8] m_moves;
     m_moves = new Vector2[8];
