@@ -1,5 +1,6 @@
 #pragma once
 #include "Piece.h"
+#include "Tile.h"
 
 class Bishop : public Piece
 {
